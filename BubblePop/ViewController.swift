@@ -20,6 +20,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var playerName: UITextField!
+    
+    @IBAction func playGame(_ sender: UIButton) {
+        // todo
+    }
+    @IBAction func showHighScore(_ sender: UIButton) {
+        // todo
+    }
+    
 }
 
