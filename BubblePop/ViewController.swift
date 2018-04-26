@@ -22,12 +22,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var playerName: UITextField!
     
-    @IBAction func playGame(_ sender: UIButton) {
-        // todo
-    }
-    @IBAction func showHighScore(_ sender: UIButton) {
-        // todo
-    }
+    
     
 }
 

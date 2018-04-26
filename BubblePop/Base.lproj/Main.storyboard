@@ -60,8 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="High Score Table"/>
                                 <connections>
-                                    <action selector="showHighScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kA0-5O-Hdk"/>
-                                    <segue destination="iB1-Zx-Ta9" kind="push" identifier="HighScore" id="arL-4a-b1S"/>
+                                    <segue destination="iB1-Zx-Ta9" kind="show" id="1c4-kt-OQP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nk-ks-aFA">
