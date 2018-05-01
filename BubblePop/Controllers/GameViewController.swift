@@ -13,16 +13,18 @@ class GameViewController: UIViewController {
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var ScoreLabel: UILabel!
     @IBOutlet weak var HighestScoreLabel: UILabel!
+    @IBOutlet weak var bubble: UIImageView!
     
     var timer = Timer()
     var gameTime = 60
+    var score = 0
+    var highestScore = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(countdown)), userInfo: nil, repeats: true)
-        
+        gameStart()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +32,18 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func gameStart() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
+        bubble.isUserInteractionEnabled = true
+        bubble.addGestureRecognizer(singleTap)
+        
+    }
+    
+    func gameOver() {
+        timer.invalidate()
+    }
     
     @objc func countdown() {
         gameTime -= 1
@@ -41,8 +55,10 @@ class GameViewController: UIViewController {
         }
     }
     
-    func gameOver() {
-        timer.invalidate()
+    @objc func tapBubble() {
+        score += 5
+        ScoreLabel.text = "\(score)"
+        ScoreLabel.sizeToFit()
     }
     
 
