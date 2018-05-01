@@ -56,9 +56,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIc-FX-mUJ">
-                                <rect key="frame" x="129" y="394" width="117" height="30"/>
+                                <rect key="frame" x="149" y="394" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="High Score Table"/>
+                                <state key="normal" title="Highscores"/>
                                 <connections>
                                     <segue destination="iB1-Zx-Ta9" kind="show" id="1c4-kt-OQP"/>
                                 </connections>
@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="279" y="287"/>
         </scene>
-        <!--High Scores-->
+        <!--Highscores-->
         <scene sceneID="szL-c3-SjY">
             <objects>
                 <tableViewController id="iB1-Zx-Ta9" customClass="HighScoresTableViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,12 +108,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iPU-pt-aWN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighscoreCell" textLabel="CPy-fb-NYD" detailTextLabel="Aov-p6-fmo" style="IBUITableViewCellStyleValue1" id="iPU-pt-aWN">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iPU-pt-aWN" id="cjp-KW-nYV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CPy-fb-NYD">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aov-p6-fmo">
+                                            <rect key="frame" x="300" y="12" width="59" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -122,7 +138,7 @@
                             <outlet property="delegate" destination="iB1-Zx-Ta9" id="zcQ-GO-7eU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="High Scores" id="a5c-ON-gvN"/>
+                    <navigationItem key="navigationItem" title="Highscores" id="a5c-ON-gvN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXy-ox-cDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
