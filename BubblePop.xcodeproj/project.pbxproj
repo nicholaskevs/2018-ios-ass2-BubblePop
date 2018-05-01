@@ -16,6 +16,8 @@
 		E1C79ECD20822A4400C20C7A /* BubblePopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */; };
 		E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */; };
 		E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22C2098979500A0FF08 /* GameViewController.swift */; };
+		E1D4C23F2098A59900A0FF08 /* blueBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D4C23D2098A59900A0FF08 /* blueBubble.png */; };
+		E1D4C2402098A59900A0FF08 /* pinkBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D4C23E2098A59900A0FF08 /* pinkBubble.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E1C79ECE20822A4400C20C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		E1D4C22C2098979500A0FF08 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E1D4C23D2098A59900A0FF08 /* blueBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBubble.png; sourceTree = "<group>"; };
+		E1D4C23E2098A59900A0FF08 /* pinkBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkBubble.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		E1C79EAB20822A4300C20C7A /* BubblePop */ = {
 			isa = PBXGroup;
 			children = (
+				E1D4C22E2098A20700A0FF08 /* Bubble */,
 				E1C79EAC20822A4300C20C7A /* AppDelegate.swift */,
 				E1C79EAE20822A4300C20C7A /* ViewController.swift */,
 				E1C79EB020822A4300C20C7A /* Main.storyboard */,
@@ -129,6 +134,15 @@
 				E1C79ECE20822A4400C20C7A /* Info.plist */,
 			);
 			path = BubblePopUITests;
+			sourceTree = "<group>";
+		};
+		E1D4C22E2098A20700A0FF08 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				E1D4C23D2098A59900A0FF08 /* blueBubble.png */,
+				E1D4C23E2098A59900A0FF08 /* pinkBubble.png */,
+			);
+			path = Bubble;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C79EB720822A4300C20C7A /* LaunchScreen.storyboard in Resources */,
+				E1D4C23F2098A59900A0FF08 /* blueBubble.png in Resources */,
+				E1D4C2402098A59900A0FF08 /* pinkBubble.png in Resources */,
 				E1C79EB420822A4300C20C7A /* Assets.xcassets in Resources */,
 				E1C79EB220822A4300C20C7A /* Main.storyboard in Resources */,
 			);
