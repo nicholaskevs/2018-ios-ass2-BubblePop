@@ -14,6 +14,8 @@
 		E1C79EB720822A4300C20C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C79EB520822A4300C20C7A /* LaunchScreen.storyboard */; };
 		E1C79EC220822A4300C20C7A /* BubblePopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EC120822A4300C20C7A /* BubblePopTests.swift */; };
 		E1C79ECD20822A4400C20C7A /* BubblePopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */; };
+		E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */; };
+		E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22C2098979500A0FF08 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		E1C79EC820822A4400C20C7A /* BubblePopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblePopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblePopUITests.swift; sourceTree = "<group>"; };
 		E1C79ECE20822A4400C20C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
+		E1D4C22C2098979500A0FF08 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				E1C79EB320822A4300C20C7A /* Assets.xcassets */,
 				E1C79EB520822A4300C20C7A /* LaunchScreen.storyboard */,
 				E1C79EB820822A4300C20C7A /* Info.plist */,
+				E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */,
+				E1D4C22C2098979500A0FF08 /* GameViewController.swift */,
 			);
 			path = BubblePop;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */,
+				E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */,
 				E1C79EAF20822A4300C20C7A /* ViewController.swift in Sources */,
 				E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */,
 			);
