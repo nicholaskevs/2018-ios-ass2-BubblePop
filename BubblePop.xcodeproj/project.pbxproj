@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAC20822A4300C20C7A /* AppDelegate.swift */; };
-		E1C79EAF20822A4300C20C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAE20822A4300C20C7A /* ViewController.swift */; };
+		E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAE20822A4300C20C7A /* HomeViewController.swift */; };
 		E1C79EB220822A4300C20C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C79EB020822A4300C20C7A /* Main.storyboard */; };
 		E1C79EB420822A4300C20C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C79EB320822A4300C20C7A /* Assets.xcassets */; };
 		E1C79EB720822A4300C20C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C79EB520822A4300C20C7A /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		E1C79EA920822A4300C20C7A /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C79EAC20822A4300C20C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1C79EAE20822A4300C20C7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1C79EAE20822A4300C20C7A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1C79EB120822A4300C20C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1C79EB320822A4300C20C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C79EB620822A4300C20C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,15 +105,13 @@
 		E1C79EAB20822A4300C20C7A /* BubblePop */ = {
 			isa = PBXGroup;
 			children = (
-				E1D4C22E2098A20700A0FF08 /* Bubble */,
+				E1D4C2412098A7F300A0FF08 /* Controllers */,
+				E1D4C22E2098A20700A0FF08 /* Image */,
 				E1C79EAC20822A4300C20C7A /* AppDelegate.swift */,
-				E1C79EAE20822A4300C20C7A /* ViewController.swift */,
 				E1C79EB020822A4300C20C7A /* Main.storyboard */,
 				E1C79EB320822A4300C20C7A /* Assets.xcassets */,
 				E1C79EB520822A4300C20C7A /* LaunchScreen.storyboard */,
 				E1C79EB820822A4300C20C7A /* Info.plist */,
-				E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */,
-				E1D4C22C2098979500A0FF08 /* GameViewController.swift */,
 			);
 			path = BubblePop;
 			sourceTree = "<group>";
@@ -136,13 +134,23 @@
 			path = BubblePopUITests;
 			sourceTree = "<group>";
 		};
-		E1D4C22E2098A20700A0FF08 /* Bubble */ = {
+		E1D4C22E2098A20700A0FF08 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				E1D4C23D2098A59900A0FF08 /* blueBubble.png */,
 				E1D4C23E2098A59900A0FF08 /* pinkBubble.png */,
 			);
-			path = Bubble;
+			path = Image;
+			sourceTree = "<group>";
+		};
+		E1D4C2412098A7F300A0FF08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1C79EAE20822A4300C20C7A /* HomeViewController.swift */,
+				E1D4C22C2098979500A0FF08 /* GameViewController.swift */,
+				E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +291,7 @@
 			files = (
 				E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */,
 				E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */,
-				E1C79EAF20822A4300C20C7A /* ViewController.swift in Sources */,
+				E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */,
 				E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
