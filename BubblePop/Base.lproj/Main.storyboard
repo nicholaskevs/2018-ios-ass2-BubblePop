@@ -113,7 +113,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-De-yHe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-De-yHe">
                                 <rect key="frame" x="42" y="108" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -142,6 +142,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="BsQ-UT-Yos"/>
                     </view>
+                    <connections>
+                        <outlet property="HighestScoreLabel" destination="7m7-5P-3RY" id="wJt-sd-tpX"/>
+                        <outlet property="ScoreLabel" destination="BnJ-aL-ad5" id="6xy-vG-jnd"/>
+                        <outlet property="TimerLabel" destination="LNm-De-yHe" id="sAq-es-JBg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knj-zW-u0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
