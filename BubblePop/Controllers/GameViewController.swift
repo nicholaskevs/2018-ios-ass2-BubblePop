@@ -36,13 +36,13 @@ class GameViewController: UIViewController {
     func gameStart() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
+//        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
         bubble.isUserInteractionEnabled = true
-        bubble.addGestureRecognizer(singleTap)
+        bubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
         bubble.color = "blue"
         
         bubblePink.isUserInteractionEnabled = true
-        bubblePink.addGestureRecognizer(singleTap)
+        bubblePink.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
         bubblePink.color = "pink"
     }
     
@@ -61,8 +61,8 @@ class GameViewController: UIViewController {
     }
     
     @objc func tapBubble(_ tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! BubbleImageView
-        switch tappedImage.color {
+        let bubble = tapGestureRecognizer.view as! BubbleImageView
+        switch bubble.color {
         case "blue":
             score += 10
         case "pink":
