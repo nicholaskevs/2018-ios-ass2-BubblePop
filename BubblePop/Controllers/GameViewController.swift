@@ -13,7 +13,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var ScoreLabel: UILabel!
     @IBOutlet weak var HighestScoreLabel: UILabel!
-    @IBOutlet weak var bubble: UIImageView!
+    @IBOutlet weak var bubble: BubbleImageView!
+    @IBOutlet weak var bubblePink: BubbleImageView!
     
     var timer = Timer()
     var gameTime = 60
@@ -38,7 +39,11 @@ class GameViewController: UIViewController {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
         bubble.isUserInteractionEnabled = true
         bubble.addGestureRecognizer(singleTap)
+        bubble.color = "blue"
         
+        bubblePink.isUserInteractionEnabled = true
+        bubblePink.addGestureRecognizer(singleTap)
+        bubblePink.color = "pink"
     }
     
     func gameOver() {
@@ -55,8 +60,16 @@ class GameViewController: UIViewController {
         }
     }
     
-    @objc func tapBubble() {
-        score += 5
+    @objc func tapBubble(_ tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! BubbleImageView
+        switch tappedImage.color {
+        case "blue":
+            score += 10
+        case "pink":
+            score += 5
+        default:
+            score += 0
+        }
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
     }

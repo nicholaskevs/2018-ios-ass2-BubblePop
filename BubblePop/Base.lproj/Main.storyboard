@@ -134,10 +134,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-rF-Cf6">
-                                <rect key="frame" x="68" y="254" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-rF-Cf6" customClass="BubbleImageView" customModule="BubblePop" customModuleProvider="target">
+                                <rect key="frame" x="128" y="255" width="120" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="bubble"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pinkBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-Ak-yiK" customClass="BubbleImageView" customModule="BubblePop" customModuleProvider="target">
+                                <rect key="frame" x="126" y="424" width="124" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +152,7 @@
                         <outlet property="ScoreLabel" destination="BnJ-aL-ad5" id="6xy-vG-jnd"/>
                         <outlet property="TimerLabel" destination="LNm-De-yHe" id="sAq-es-JBg"/>
                         <outlet property="bubble" destination="SRZ-rF-Cf6" id="YOq-YS-YTu"/>
+                        <outlet property="bubblePink" destination="FZs-Ak-yiK" id="eWy-N4-xKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knj-zW-u0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,5 +207,6 @@
     </scenes>
     <resources>
         <image name="blueBubble.png" width="1564" height="1579"/>
+        <image name="pinkBubble.png" width="1006" height="1016"/>
     </resources>
 </document>
