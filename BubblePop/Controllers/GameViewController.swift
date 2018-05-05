@@ -20,6 +20,7 @@ class GameViewController: UIViewController {
     var gameTime = 60
     var score = 0
     var highestScore = 0
+    var playerName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +61,8 @@ class GameViewController: UIViewController {
         }
     }
     
-    @objc func tapBubble(_ tapGestureRecognizer: UITapGestureRecognizer) {
-        let bubble = tapGestureRecognizer.view as! BubbleImageView
+    @objc func tapBubble(_ tap: UITapGestureRecognizer) {
+        let bubble = tap.view as! BubbleImageView
         switch bubble.color {
         case "blue":
             score += 10

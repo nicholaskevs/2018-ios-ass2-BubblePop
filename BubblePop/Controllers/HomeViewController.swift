@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var playerName: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,15 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBOutlet weak var playerName: UITextField!
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if let game = segue.destination as? GameViewController {
+            game.playerName = playerName.text!
+        }
+        
+    }
     
 }
 
