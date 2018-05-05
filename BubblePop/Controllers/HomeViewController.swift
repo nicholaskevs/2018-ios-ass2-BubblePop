@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  BubblePop
 //
 //  Created by Nicholas on 14/4/18.

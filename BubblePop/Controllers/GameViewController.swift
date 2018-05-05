@@ -8,14 +8,6 @@
 
 import UIKit
 
-enum Bubbles: Int {
-    case red = 1
-    case pink = 2
-    case green = 5
-    case blue = 8
-    case black = 10
-}
-
 class GameViewController: UIViewController {
     
     @IBOutlet weak var TimerLabel: UILabel!
@@ -62,7 +54,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func makeBubble(_ color: Bubbles, image: String, x: Int, y: Int) {
+    func makeBubble(_ color: Bubble, image: String, x: Int, y: Int) {
         let newBubble = BubbleImageView(image: UIImage(named: image))
         newBubble.color = color
         newBubble.frame = CGRect(x: x, y: y, width: 50, height: 50)
