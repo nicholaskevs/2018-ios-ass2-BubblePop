@@ -34,8 +34,7 @@ class HomeViewController: UIViewController {
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        // passing player name to game view controller
         if let game = segue.destination as? GameViewController {
             game.playerName = playerName.text!
         }
