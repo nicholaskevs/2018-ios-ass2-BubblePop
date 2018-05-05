@@ -19,6 +19,8 @@ class GameViewController: UIViewController {
     var score = 0
     var highestScore = 0
     var playerName = ""
+    var maxBubble = 15
+    var currentBubble: [BubbleImageView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class GameViewController: UIViewController {
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-        makeBubble(.blue, x: 128, y: 278)
+        spawnBubbles()
     }
     
     func gameOver() {
@@ -45,6 +47,8 @@ class GameViewController: UIViewController {
     
     // countdown timer
     @objc func countdown() {
+//        spawnBubbles()
+        
         if gameTime > 0 {
             gameTime -= 1
             TimerLabel.text = "\(gameTime)"
@@ -53,6 +57,27 @@ class GameViewController: UIViewController {
         else {
             gameOver()
         }
+    }
+    
+    // refresh and get current showing bubbles into array
+    func getBubbles() {
+        currentBubble.removeAll()
+        for subview in view.subviews {
+            if let bubble = subview as? BubbleImageView {
+                currentBubble.append(bubble)
+            }
+        }
+    }
+    
+    func spawnBubbles() {
+        getBubbles()
+        let canSpawn = maxBubble - currentBubble.count
+        let randomSpawn = Int(arc4random_uniform(UInt32(canSpawn + 1)))
+        
+        for _ in 1...randomSpawn {
+            makeBubble(.blue, x: 128, y: 278)
+        }
+        
     }
     
     func makeBubble(_ color: Bubble, x: Int, y: Int) {
