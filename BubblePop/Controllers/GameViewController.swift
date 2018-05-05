@@ -45,11 +45,12 @@ class GameViewController: UIViewController {
     
     // countdown timer
     @objc func countdown() {
-        gameTime -= 1
-        TimerLabel.text = "\(gameTime)"
-        TimerLabel.sizeToFit()
-        
-        if gameTime == 0 {
+        if gameTime > 0 {
+            gameTime -= 1
+            TimerLabel.text = "\(gameTime)"
+            TimerLabel.sizeToFit()
+        }
+        else {
             gameOver()
         }
     }

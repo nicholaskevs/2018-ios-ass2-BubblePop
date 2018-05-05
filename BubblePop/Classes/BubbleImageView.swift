@@ -35,9 +35,10 @@ class BubbleImageView: UIImageView {
     
     // countdown timer
     @objc func countdown() {
-        popTime -= 1
-        
-        if popTime == 0 {
+        if popTime > 0 {
+            popTime -= 1
+        }
+        else {
             timer.invalidate()
             self.removeFromSuperview()
         }
