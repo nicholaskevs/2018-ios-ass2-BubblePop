@@ -11,8 +11,6 @@ import UIKit
 class BubbleImageView: UIImageView {
     
     var color: Bubble = .red
-    var popTime = 5
-    var timer = Timer()
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -21,28 +19,6 @@ class BubbleImageView: UIImageView {
         // Drawing code
     }
     */
-    
-    override init(image: UIImage?) {
-        super.init(image: image)
-        
-        // remove bubble after a certain time
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    // countdown timer
-    @objc func countdown() {
-        if popTime > 0 {
-            popTime -= 1
-        }
-        else {
-            timer.invalidate()
-            self.removeFromSuperview()
-        }
-    }
     
     // to not trigger tap outside bubble
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
