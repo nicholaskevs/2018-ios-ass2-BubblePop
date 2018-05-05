@@ -102,7 +102,17 @@ class GameViewController: UIViewController {
     }
     
     func makeRandomBubble() {
-        makeBubble(.blue, x: 128, y: 278)
+        let randomColor = Int(arc4random_uniform(101))
+        var color: Bubble
+        
+        if randomColor < 50 {
+            color = .blue
+        }
+        else {
+            color = .pink
+        }
+        
+        makeBubble(color, x: 128, y: 278)
     }
     
     func removeRandomBubble() {
