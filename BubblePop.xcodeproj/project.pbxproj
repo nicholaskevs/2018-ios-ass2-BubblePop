@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1336116209DBC47007F5748 /* BubbleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1336115209DBC47007F5748 /* BubbleEnum.swift */; };
+		E1336116209DBC47007F5748 /* BubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1336115209DBC47007F5748 /* BubbleData.swift */; };
 		E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAC20822A4300C20C7A /* AppDelegate.swift */; };
 		E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAE20822A4300C20C7A /* HomeViewController.swift */; };
 		E1C79EB220822A4300C20C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C79EB020822A4300C20C7A /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E1336115209DBC47007F5748 /* BubbleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleEnum.swift; sourceTree = "<group>"; };
+		E1336115209DBC47007F5748 /* BubbleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleData.swift; sourceTree = "<group>"; };
 		E1C79EA920822A4300C20C7A /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C79EAC20822A4300C20C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C79EAE20822A4300C20C7A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E1CC6F16209A00E200E70E3C /* BubbleImageView.swift */,
-				E1336115209DBC47007F5748 /* BubbleEnum.swift */,
+				E1336115209DBC47007F5748 /* BubbleData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 			files = (
 				E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */,
 				E1CC6F17209A00E200E70E3C /* BubbleImageView.swift in Sources */,
-				E1336116209DBC47007F5748 /* BubbleEnum.swift in Sources */,
+				E1336116209DBC47007F5748 /* BubbleData.swift in Sources */,
 				E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */,
 				E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */,
 				E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */,

@@ -24,6 +24,8 @@ class BubbleImageView: UIImageView {
     
     override init(image: UIImage?) {
         super.init(image: image)
+        
+        // remove bubble after a certain time
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
     }
     

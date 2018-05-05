@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-        makeBubble(.blue, image: "blueBubble.png", x: 128, y: 278)
+        makeBubble(.blue, x: 128, y: 278)
     }
     
     func gameOver() {
@@ -54,8 +54,8 @@ class GameViewController: UIViewController {
         }
     }
     
-    func makeBubble(_ color: Bubble, image: String, x: Int, y: Int) {
-        let newBubble = BubbleImageView(image: UIImage(named: image))
+    func makeBubble(_ color: Bubble, x: Int, y: Int) {
+        let newBubble = BubbleImageView(image: UIImage(named: color.image))
         newBubble.color = color
         newBubble.frame = CGRect(x: x, y: y, width: 50, height: 50)
         newBubble.isUserInteractionEnabled = true
