@@ -69,6 +69,7 @@ class GameViewController: UIViewController {
         score += bubble.color.rawValue
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
+        bubble.removeFromSuperview()
     }
     
 
