@@ -10,7 +10,7 @@ import UIKit
 
 class BubbleImageView: UIImageView {
     
-    var color: String = ""
+    var color: Bubbles = Bubbles.red
 
     /*
     // Only override draw() if you perform custom drawing.

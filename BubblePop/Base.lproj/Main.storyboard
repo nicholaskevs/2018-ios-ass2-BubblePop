@@ -127,15 +127,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-rF-Cf6" customClass="BubbleImageView" customModule="BubblePop" customModuleProvider="target">
-                                <rect key="frame" x="128" y="278" width="120" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="bubble"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pinkBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-Ak-yiK" customClass="BubbleImageView" customModule="BubblePop" customModuleProvider="target">
-                                <rect key="frame" x="128" y="424" width="120" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-aL-ad5">
                                 <rect key="frame" x="172" y="108" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -151,8 +142,6 @@
                         <outlet property="HighestScoreLabel" destination="7m7-5P-3RY" id="wJt-sd-tpX"/>
                         <outlet property="ScoreLabel" destination="BnJ-aL-ad5" id="6xy-vG-jnd"/>
                         <outlet property="TimerLabel" destination="LNm-De-yHe" id="sAq-es-JBg"/>
-                        <outlet property="bubble" destination="SRZ-rF-Cf6" id="YOq-YS-YTu"/>
-                        <outlet property="bubblePink" destination="FZs-Ak-yiK" id="eWy-N4-xKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knj-zW-u0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,8 +194,4 @@
             <point key="canvasLocation" x="-626" y="1056"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="blueBubble.png" width="1564" height="1579"/>
-        <image name="pinkBubble.png" width="1006" height="1016"/>
-    </resources>
 </document>

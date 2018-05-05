@@ -8,13 +8,19 @@
 
 import UIKit
 
+enum Bubbles: Int {
+    case red = 1
+    case pink = 2
+    case green = 5
+    case blue = 8
+    case black = 10
+}
+
 class GameViewController: UIViewController {
     
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var ScoreLabel: UILabel!
     @IBOutlet weak var HighestScoreLabel: UILabel!
-    @IBOutlet weak var bubble: BubbleImageView!
-    @IBOutlet weak var bubblePink: BubbleImageView!
     
     var timer = Timer()
     var gameTime = 60
@@ -36,15 +42,7 @@ class GameViewController: UIViewController {
     
     func gameStart() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
-        
-//        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
-        bubble.isUserInteractionEnabled = true
-        bubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
-        bubble.color = "blue"
-        
-        bubblePink.isUserInteractionEnabled = true
-        bubblePink.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
-        bubblePink.color = "pink"
+        makeBubbles()
     }
     
     func gameOver() {
@@ -61,16 +59,25 @@ class GameViewController: UIViewController {
         }
     }
     
+    func makeBubbles() {
+        //let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
+        let newBubble = BubbleImageView(image: UIImage(named: "blueBubble.png"))
+        newBubble.isUserInteractionEnabled = true
+        newBubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
+        newBubble.color = .blue
+        newBubble.frame = CGRect(x: 128, y: 278, width: 120, height: 120)
+//        newBubble.layer.borderWidth = 1
+//        newBubble.layer.borderColor = UIColor.black.cgColor
+//        newBubble.layer.cornerRadius = newBubble.frame.height / 2
+//        newBubble.layer.masksToBounds = false
+//        newBubble.clipsToBounds = true
+        view.addSubview(newBubble)
+        
+    }
+    
     @objc func tapBubble(_ tap: UITapGestureRecognizer) {
         let bubble = tap.view as! BubbleImageView
-        switch bubble.color {
-        case "blue":
-            score += 10
-        case "pink":
-            score += 5
-        default:
-            score += 0
-        }
+        score += bubble.color.rawValue
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
     }
