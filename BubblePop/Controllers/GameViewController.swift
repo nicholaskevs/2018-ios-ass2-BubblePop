@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-        spawnBubbles()
+//        spawnBubbles()
     }
     
     func gameOver() {
@@ -47,7 +47,7 @@ class GameViewController: UIViewController {
     
     // countdown timer
     @objc func countdown() {
-//        spawnBubbles()
+        spawnBubbles()
         
         if gameTime > 0 {
             gameTime -= 1
@@ -74,7 +74,7 @@ class GameViewController: UIViewController {
             // get random number of bubble that will be removed
             let randomRemove = Int(arc4random_uniform(UInt32(currentBubble.count + 1)))
             
-            for _ in 1...randomRemove {
+            for _ in 0..<randomRemove {
                 removeRandomBubble()
             }
         }
@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         let canSpawn = maxBubble - currentBubble.count
         let randomSpawn = Int(arc4random_uniform(UInt32(canSpawn + 1)))
         
-        for _ in 1...randomSpawn {
+        for _ in 0..<randomSpawn {
             makeRandomBubble()
         }
         
@@ -117,7 +117,14 @@ class GameViewController: UIViewController {
             color = .pink
         }
         
-        makeBubble(color, x: 128, y: 278)
+        let x = Int(view.bounds.width) - 50
+        let y = Int(view.bounds.height) - 50
+        
+        let randomX = Int(arc4random_uniform(UInt32(x)))
+        let randomY = Int(arc4random_uniform(UInt32(y)))
+        
+//        makeBubble(color, x: 128, y: 278)
+        makeBubble(color, x: randomX, y: randomY)
     }
     
     func removeRandomBubble() {
