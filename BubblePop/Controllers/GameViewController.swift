@@ -69,13 +69,23 @@ class GameViewController: UIViewController {
         }
     }
     
+    // remove random bubbles and spawn new bubbles
     func spawnBubbles() {
-        getBubbles()
+        if currentBubble.count > 0 {
+            // get random number of bubble that will be removed
+            let randomRemove = Int(arc4random_uniform(UInt32(currentBubble.count + 1)))
+            
+            for _ in 1...randomRemove {
+                removeRandomBubble()
+            }
+        }
+        
+        // get random number of bubble that can be spawned
         let canSpawn = maxBubble - currentBubble.count
         let randomSpawn = Int(arc4random_uniform(UInt32(canSpawn + 1)))
         
         for _ in 1...randomSpawn {
-            makeBubble(.blue, x: 128, y: 278)
+            makeRandomBubble()
         }
         
     }
@@ -86,7 +96,20 @@ class GameViewController: UIViewController {
         newBubble.frame = CGRect(x: x, y: y, width: 50, height: 50)
         newBubble.isUserInteractionEnabled = true
         newBubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
+        
         view.addSubview(newBubble)
+        currentBubble.append(newBubble)
+    }
+    
+    func makeRandomBubble() {
+        makeBubble(.blue, x: 128, y: 278)
+    }
+    
+    func removeRandomBubble() {
+        let randomIndex = Int(arc4random_uniform(UInt32(currentBubble.count)))
+        
+        currentBubble[randomIndex].removeFromSuperview()
+        currentBubble.remove(at: randomIndex)
     }
     
     // tap bubble trigger
