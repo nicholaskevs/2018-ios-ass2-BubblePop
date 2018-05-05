@@ -44,7 +44,7 @@ class GameViewController: UIViewController {
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-        makeBubbles()
+        makeBubble(.blue, image: "blueBubble.png", x: 128, y: 278)
     }
     
     func gameOver() {
@@ -62,15 +62,13 @@ class GameViewController: UIViewController {
         }
     }
     
-    func makeBubbles() {
-        //let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapBubble))
-        let newBubble = BubbleImageView(image: UIImage(named: "blueBubble.png"))
+    func makeBubble(_ color: Bubbles, image: String, x: Int, y: Int) {
+        let newBubble = BubbleImageView(image: UIImage(named: image))
+        newBubble.color = color
+        newBubble.frame = CGRect(x: x, y: y, width: 50, height: 50)
         newBubble.isUserInteractionEnabled = true
         newBubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
-        newBubble.color = .blue
-        newBubble.frame = CGRect(x: 128, y: 278, width: 120, height: 120)
         view.addSubview(newBubble)
-        
     }
     
     // tap bubble trigger
