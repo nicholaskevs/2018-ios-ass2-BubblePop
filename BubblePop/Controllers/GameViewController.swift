@@ -53,8 +53,7 @@ class GameViewController: UIViewController {
             gameTime -= 1
             TimerLabel.text = "\(gameTime)"
             TimerLabel.sizeToFit()
-        }
-        else {
+        } else {
             gameOver()
         }
     }
@@ -105,10 +104,16 @@ class GameViewController: UIViewController {
         let randomColor = Int(arc4random_uniform(101))
         var color: Bubble
         
-        if randomColor < 50 {
+        // random bubble colour with probability
+        if randomColor <= 40 {
             color = .blue
-        }
-        else {
+        } else if randomColor <= 70 {
+            color = .blue
+        } else if randomColor <= 85 {
+            color = .pink
+        } else if randomColor <= 95 {
+            color = .pink
+        } else {
             color = .pink
         }
         
