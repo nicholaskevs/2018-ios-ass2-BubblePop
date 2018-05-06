@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -161,12 +162,12 @@
         <scene sceneID="xQP-DZ-Scu">
             <objects>
                 <viewController id="ndr-Dj-pKR" customClass="ResultViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fb3-Ze-Rcw">
+                    <view key="view" contentMode="scaleAspectFit" id="Fb3-Ze-Rcw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L25-a1-ulK">
-                                <rect key="frame" x="0.0" y="332" width="375" height="335"/>
+                                <rect key="frame" x="0.0" y="374" width="375" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -203,7 +204,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlayerName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-iQ-yRk">
-                                <rect key="frame" x="119" y="133" width="136" height="30"/>
+                                <rect key="frame" x="120" y="133" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -217,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pht-Jo-eFT">
-                                <rect key="frame" x="164" y="224" width="47" height="30"/>
+                                <rect key="frame" x="164" y="237" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -332,14 +333,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="1" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="eWa-JW-v7T">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="1" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="eWa-JW-v7T">
                                                     <rect key="frame" x="14" y="7" width="347" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="gameTimeChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="xsI-Vp-C4N"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eWa-JW-v7T" secondAttribute="bottom" constant="-3" id="3Mj-K5-UVt"/>
+                                                <constraint firstItem="eWa-JW-v7T" firstAttribute="leading" secondItem="sgF-Fo-wbS" secondAttribute="leadingMargin" id="LNP-Oo-kBa"/>
+                                                <constraint firstAttribute="trailing" secondItem="eWa-JW-v7T" secondAttribute="trailing" constant="16" id="MNK-mP-fpt"/>
+                                                <constraint firstItem="eWa-JW-v7T" firstAttribute="centerY" secondItem="sgF-Fo-wbS" secondAttribute="centerY" id="TWL-dK-0wi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="i0g-Ez-37J">
@@ -373,14 +379,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-PO-MXW">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-PO-MXW">
                                                     <rect key="frame" x="16" y="6" width="345" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="refreshTimeChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="217-7E-fdx"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FXS-PO-MXW" firstAttribute="leading" secondItem="ny8-ct-Rgd" secondAttribute="leadingMargin" constant="2" id="EPq-CA-Gw6"/>
+                                                <constraint firstItem="FXS-PO-MXW" firstAttribute="top" secondItem="ny8-ct-Rgd" secondAttribute="topMargin" constant="-5" id="L38-AF-orh"/>
+                                                <constraint firstAttribute="trailing" secondItem="FXS-PO-MXW" secondAttribute="trailing" constant="16" id="MPx-eg-AM5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FXS-PO-MXW" secondAttribute="bottom" constant="-2" id="S06-rh-lgE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8Iv-h9-gDr">
@@ -414,14 +425,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="9w0-fi-vLW">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="9w0-fi-vLW">
                                                     <rect key="frame" x="16" y="6" width="345" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="bubbleSizeChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="1rv-3u-R1v"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9w0-fi-vLW" firstAttribute="top" secondItem="gzs-e3-nXb" secondAttribute="topMargin" constant="-5" id="2ra-xK-BWX"/>
+                                                <constraint firstItem="9w0-fi-vLW" firstAttribute="leading" secondItem="gzs-e3-nXb" secondAttribute="leadingMargin" constant="2" id="Jbq-wr-ffi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9w0-fi-vLW" secondAttribute="bottom" constant="-2" id="bDc-Kw-Hn7"/>
+                                                <constraint firstAttribute="trailing" secondItem="9w0-fi-vLW" secondAttribute="trailing" constant="16" id="wyT-fl-Ox3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZZj-ic-56a">
@@ -455,14 +471,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="lgV-xX-o77">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="lgV-xX-o77">
                                                     <rect key="frame" x="14" y="7" width="347" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="maxBubbleChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="4FT-kM-Rfz"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lgV-xX-o77" firstAttribute="leading" secondItem="eUN-Qc-E17" secondAttribute="leadingMargin" id="Ejr-LW-XcK"/>
+                                                <constraint firstItem="lgV-xX-o77" firstAttribute="centerY" secondItem="eUN-Qc-E17" secondAttribute="centerY" id="SRX-vi-77e"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lgV-xX-o77" secondAttribute="bottom" constant="-3" id="d0i-Hi-FZc"/>
+                                                <constraint firstAttribute="trailing" secondItem="lgV-xX-o77" secondAttribute="trailing" constant="16" id="sgX-p2-VTy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DCB-P4-UDY">
@@ -472,15 +493,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnI-bs-6Z0">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnI-bs-6Z0">
                                                     <rect key="frame" x="101" y="6" width="173" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Revert to default settings"/>
                                                     <connections>
                                                         <action selector="defaultSettings:" destination="R4r-pv-C3S" eventType="touchUpInside" id="eV6-XX-oxx"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DnI-bs-6Z0" firstAttribute="centerX" secondItem="hYM-5F-BQc" secondAttribute="centerX" id="MIL-FN-UmX"/>
+                                                <constraint firstItem="DnI-bs-6Z0" firstAttribute="centerY" secondItem="hYM-5F-BQc" secondAttribute="centerY" id="Zo8-aE-4Js"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
