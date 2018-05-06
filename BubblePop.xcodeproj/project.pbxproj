@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E121D49E209F0AE200649EA5 /* blackBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E121D49B209F0AE100649EA5 /* blackBubble.png */; };
+		E121D49F209F0AE200649EA5 /* greenBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E121D49C209F0AE100649EA5 /* greenBubble.png */; };
+		E121D4A0209F0AE200649EA5 /* redBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E121D49D209F0AE200649EA5 /* redBubble.png */; };
 		E1336116209DBC47007F5748 /* BubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1336115209DBC47007F5748 /* BubbleData.swift */; };
 		E1C79EAD20822A4300C20C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAC20822A4300C20C7A /* AppDelegate.swift */; };
 		E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EAE20822A4300C20C7A /* HomeViewController.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E121D49B209F0AE100649EA5 /* blackBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBubble.png; sourceTree = "<group>"; };
+		E121D49C209F0AE100649EA5 /* greenBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenBubble.png; sourceTree = "<group>"; };
+		E121D49D209F0AE200649EA5 /* redBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBubble.png; sourceTree = "<group>"; };
 		E1336115209DBC47007F5748 /* BubbleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleData.swift; sourceTree = "<group>"; };
 		E1C79EA920822A4300C20C7A /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C79EAC20822A4300C20C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,8 +159,11 @@
 		E1D4C22E2098A20700A0FF08 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				E1D4C23D2098A59900A0FF08 /* blueBubble.png */,
+				E121D49D209F0AE200649EA5 /* redBubble.png */,
 				E1D4C23E2098A59900A0FF08 /* pinkBubble.png */,
+				E121D49C209F0AE100649EA5 /* greenBubble.png */,
+				E1D4C23D2098A59900A0FF08 /* blueBubble.png */,
+				E121D49B209F0AE100649EA5 /* blackBubble.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -281,7 +290,10 @@
 				E1D4C23F2098A59900A0FF08 /* blueBubble.png in Resources */,
 				E1D4C2402098A59900A0FF08 /* pinkBubble.png in Resources */,
 				E1C79EB420822A4300C20C7A /* Assets.xcassets in Resources */,
+				E121D49F209F0AE200649EA5 /* greenBubble.png in Resources */,
 				E1C79EB220822A4300C20C7A /* Main.storyboard in Resources */,
+				E121D49E209F0AE200649EA5 /* blackBubble.png in Resources */,
+				E121D4A0209F0AE200649EA5 /* redBubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

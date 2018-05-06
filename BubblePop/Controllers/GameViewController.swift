@@ -80,16 +80,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    // refresh and get current showing bubbles into array
-//    func getBubbles() {
-//        currentBubbles.removeAll()
-//        for subview in view.subviews {
-//            if let bubble = subview as? BubbleImageView {
-//                currentBubbles.append(bubble)
-//            }
-//        }
-//    }
-    
     // remove random bubbles and spawn new bubbles
     func spawnBubbles() {
         if currentBubbles.count > 0 {
@@ -131,15 +121,15 @@ class GameViewController: UIViewController {
         
         // random bubble colour with probability
         if randomColor <= 40 {
-            color = .blue
+            color = .red
         } else if randomColor <= 70 {
-            color = .blue
+            color = .pink
         } else if randomColor <= 85 {
-            color = .pink
+            color = .green
         } else if randomColor <= 95 {
-            color = .pink
+            color = .blue
         } else {
-            color = .pink
+            color = .black
         }
         
         // get random position to spawn
@@ -199,14 +189,16 @@ class GameViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // passing player name to game view controller
+        if let result = segue.destination as? ResultViewController {
+            result.PlayerNameLabel.text = playerName
+            result.ScoreLabel.text = "\(score)"
+        }
     }
-    */
+    
 
 }

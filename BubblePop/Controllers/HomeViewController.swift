@@ -38,7 +38,6 @@ class HomeViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // passing player name to game view controller
         if let game = segue.destination as? GameViewController {
