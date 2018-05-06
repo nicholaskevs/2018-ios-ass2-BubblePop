@@ -19,6 +19,7 @@
 		E1C79EC220822A4300C20C7A /* BubblePopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79EC120822A4300C20C7A /* BubblePopTests.swift */; };
 		E1C79ECD20822A4400C20C7A /* BubblePopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */; };
 		E1CC6F17209A00E200E70E3C /* BubbleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC6F16209A00E200E70E3C /* BubbleImageView.swift */; };
+		E1D11702209F20F000020E7A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D11701209F20F000020E7A /* SettingTableViewController.swift */; };
 		E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */; };
 		E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22C2098979500A0FF08 /* GameViewController.swift */; };
 		E1D4C23F2098A59900A0FF08 /* blueBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D4C23D2098A59900A0FF08 /* blueBubble.png */; };
@@ -62,6 +63,7 @@
 		E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblePopUITests.swift; sourceTree = "<group>"; };
 		E1C79ECE20822A4400C20C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC6F16209A00E200E70E3C /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
+		E1D11701209F20F000020E7A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		E1D4C22C2098979500A0FF08 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E1D4C23D2098A59900A0FF08 /* blueBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBubble.png; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				E1D4C22C2098979500A0FF08 /* GameViewController.swift */,
 				E1DD4A0A209EEF0D006DA63E /* ResultViewController.swift */,
 				E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */,
+				E1D11701209F20F000020E7A /* SettingTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */,
 				E1CC6F17209A00E200E70E3C /* BubbleImageView.swift in Sources */,
 				E1DD4A0B209EEF0D006DA63E /* ResultViewController.swift in Sources */,
+				E1D11702209F20F000020E7A /* SettingTableViewController.swift in Sources */,
 				E1336116209DBC47007F5748 /* BubbleData.swift in Sources */,
 				E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */,
 				E1C79EAF20822A4300C20C7A /* HomeViewController.swift in Sources */,

@@ -9,6 +9,8 @@
 import UIKit
 
 let HighScoreTableKey = "highScoreTable"
+let GameTimeSettingKey = "gameTimeSetting"
+let MaxBubbleSettingKey = "maxBubbleSetting"
 
 enum Bubble: Int {
     case red = 1

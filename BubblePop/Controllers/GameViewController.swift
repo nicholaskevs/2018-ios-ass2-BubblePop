@@ -15,12 +15,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var HighestScoreLabel: UILabel!
     
     var timer = Timer()
-    var gameTime = 10
+    var gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
     var refreshTime = 5
     var score = 0
     var playerName = ""
     var bubbleRadius = 50
-    var maxBubble = 15
+    var maxBubble = UserDefaults.standard.integer(forKey: MaxBubbleSettingKey)
     var currentBubbles: [BubbleImageView] = []
     var lastColor: Bubble = .red
     var safeAreaTop = 0
@@ -49,6 +49,8 @@ class GameViewController: UIViewController {
         // get save area top edge
         safeAreaTop = Int(TimerLabel.frame.maxY)
         HighestScoreLabel.text = "\(getHighestScore())"
+        TimerLabel.text = "\(gameTime)"
+        TimerLabel.sizeToFit()
         
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)

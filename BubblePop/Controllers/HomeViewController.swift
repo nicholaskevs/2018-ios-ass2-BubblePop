@@ -30,6 +30,14 @@ class HomeViewController: UIViewController {
             UserDefaults.standard.set(highScoreTable, forKey: HighScoreTableKey)
         }
         
+        if UserDefaults.standard.integer(forKey: GameTimeSettingKey) == 0 {
+            UserDefaults.standard.set(60, forKey: GameTimeSettingKey)
+        }
+        
+        if UserDefaults.standard.integer(forKey: MaxBubbleSettingKey) == 0 {
+            UserDefaults.standard.set(15, forKey: MaxBubbleSettingKey)
+        }
+        
 //        print(Array(UserDefaults.standard.dictionaryRepresentation()))
 //        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
     }
