@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     var bubbleRadius = 50
     var maxBubble = 15
     var currentBubbles: [BubbleImageView] = []
+    var lastColor: Bubble = .red
     var safeAreaTop = 0
 
     override func viewDidLoad() {
@@ -68,14 +69,14 @@ class GameViewController: UIViewController {
     }
     
     // refresh and get current showing bubbles into array
-    func getBubbles() {
-        currentBubbles.removeAll()
-        for subview in view.subviews {
-            if let bubble = subview as? BubbleImageView {
-                currentBubbles.append(bubble)
-            }
-        }
-    }
+//    func getBubbles() {
+//        currentBubbles.removeAll()
+//        for subview in view.subviews {
+//            if let bubble = subview as? BubbleImageView {
+//                currentBubbles.append(bubble)
+//            }
+//        }
+//    }
     
     // remove random bubbles and spawn new bubbles
     func spawnBubbles() {
@@ -160,7 +161,17 @@ class GameViewController: UIViewController {
     // tap bubble trigger
     @objc func tapBubble(_ tap: UITapGestureRecognizer) {
         let bubble = tap.view as! BubbleImageView
-        score += bubble.color.rawValue
+        
+        // count score with combo multiplier
+        if score != 0 && lastColor == bubble.color {
+            var tempScore = Double(bubble.color.rawValue) * 1.5
+            tempScore.round()
+            score += Int(tempScore)
+        } else {
+            score += bubble.color.rawValue
+        }
+        
+        lastColor = bubble.color
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
         bubble.removeFromSuperview()
