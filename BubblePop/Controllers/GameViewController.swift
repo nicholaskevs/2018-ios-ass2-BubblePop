@@ -203,8 +203,8 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // passing player name to game view controller
         if let result = segue.destination as? ResultViewController {
-            result.PlayerNameLabel.text = playerName
-            result.ScoreLabel.text = "\(score)"
+            result.playerName = playerName
+            result.score = score
         }
     }
     
