@@ -15,10 +15,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var HighestScoreLabel: UILabel!
     
     var timer = Timer()
-    var gameTime = 60
+    var gameTime = 10
     var refreshTime = 5
     var score = 0
-    var highestScore = 0
     var playerName = ""
     var bubbleRadius = 50
     var maxBubble = 15
@@ -41,6 +40,7 @@ class GameViewController: UIViewController {
     func gameStart() {
         // get save area top edge
         safeAreaTop = Int(TimerLabel.frame.maxY)
+        HighestScoreLabel.text = "\(getHighestScore())"
         
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
@@ -50,6 +50,9 @@ class GameViewController: UIViewController {
     
     func gameOver() {
         timer.invalidate()
+        var table = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as! [String : Int]
+        table[playerName] = score
+        UserDefaults.standard.set(table, forKey: HighScoreTableKey)
     }
     
     // countdown timer
@@ -175,6 +178,15 @@ class GameViewController: UIViewController {
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
         bubble.removeFromSuperview()
+    }
+    
+    func getHighestScore() -> Int {
+        let highScore = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as? [String : Int]
+        if highScore == nil || highScore?.count == 0 {
+            return 0
+        } else {
+            return highScore!.sorted{ $0.1 > $1.1 }.first!.value
+        }
     }
     
 

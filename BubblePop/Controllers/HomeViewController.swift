@@ -25,7 +25,13 @@ class HomeViewController: UIViewController {
     }
     
     func gameSetup() {
-        //todo
+        if UserDefaults.standard.dictionary(forKey: HighScoreTableKey) == nil {
+            let highScoreTable: [String : Int] = [:]
+            UserDefaults.standard.set(highScoreTable, forKey: HighScoreTableKey)
+        }
+        
+//        print(Array(UserDefaults.standard.dictionaryRepresentation()))
+//        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
     }
     
     

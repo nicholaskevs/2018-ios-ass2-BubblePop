@@ -8,6 +8,8 @@
 
 import UIKit
 
+let HighScoreTableKey = "highScoreTable"
+
 enum Bubble: Int {
     case red = 1
     case pink = 2
