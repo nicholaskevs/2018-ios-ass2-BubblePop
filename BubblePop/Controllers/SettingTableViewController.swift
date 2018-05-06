@@ -28,7 +28,27 @@ class SettingTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        // load settings value
+        loadSettingsValue()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // saving edited settings value
+        if self.isMovingFromParentViewController {
+            UserDefaults.standard.set(Int(GameTimeSlider.value), forKey: GameTimeSettingKey)
+            UserDefaults.standard.set(Int(RefreshTimeSlider.value), forKey: RefreshTimeSettingKey)
+            UserDefaults.standard.set(Int(BubbleSizeSlider.value), forKey: BubbleSizeSettingKey)
+            UserDefaults.standard.set(Int(MaxBubbleSlider.value), forKey: MaxBubbleSettingKey)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func loadSettingsValue() {
         let gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
         let refreshTime = UserDefaults.standard.integer(forKey: RefreshTimeSettingKey)
         let bubbleSize = UserDefaults.standard.integer(forKey: BubbleSizeSettingKey)
@@ -49,23 +69,6 @@ class SettingTableViewController: UITableViewController {
         MaxBubbleLabel.text = "\(maxBubble)"
         MaxBubbleLabel.sizeToFit()
         MaxBubbleSlider.value = Float(maxBubble)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // saving edited settings value
-        if self.isMovingFromParentViewController {
-            UserDefaults.standard.set(Int(GameTimeSlider.value), forKey: GameTimeSettingKey)
-            UserDefaults.standard.set(Int(RefreshTimeSlider.value), forKey: RefreshTimeSettingKey)
-            UserDefaults.standard.set(Int(BubbleSizeSlider.value), forKey: BubbleSizeSettingKey)
-            UserDefaults.standard.set(Int(MaxBubbleSlider.value), forKey: MaxBubbleSettingKey)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func gameTimeChanged(_ sender: UISlider) {
