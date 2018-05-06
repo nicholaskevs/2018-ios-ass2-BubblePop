@@ -51,7 +51,14 @@ class GameViewController: UIViewController {
     func gameOver() {
         timer.invalidate()
         var table = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as! [String : Int]
-        table[playerName] = score
+        
+        if let oldScore = table[playerName] {
+            if oldScore < score {
+                table[playerName] = score
+            }
+        } else {
+            table[playerName] = score
+        }
         UserDefaults.standard.set(table, forKey: HighScoreTableKey)
         
         performSegue(withIdentifier: "ResultSegue", sender: nil)
