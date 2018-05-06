@@ -35,6 +35,14 @@ class HomeViewController: UIViewController {
             UserDefaults.standard.set(60, forKey: GameTimeSettingKey)
         }
         
+        if UserDefaults.standard.integer(forKey: RefreshTimeSettingKey) == 0 {
+            UserDefaults.standard.set(5, forKey: RefreshTimeSettingKey)
+        }
+        
+        if UserDefaults.standard.integer(forKey: BubbleSizeSettingKey) == 0 {
+            UserDefaults.standard.set(50, forKey: BubbleSizeSettingKey)
+        }
+        
         if UserDefaults.standard.integer(forKey: MaxBubbleSettingKey) == 0 {
             UserDefaults.standard.set(15, forKey: MaxBubbleSettingKey)
         }
@@ -48,7 +56,7 @@ class HomeViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // passing player name to game view controller
+        // passing player name to game view controller
         if let game = segue.destination as? GameViewController {
             game.playerName = playerName.text!
         }

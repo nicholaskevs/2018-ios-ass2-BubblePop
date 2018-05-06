@@ -16,10 +16,10 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     var gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
-    var refreshTime = 5
-    var score = 0
+    var refreshTime = UserDefaults.standard.integer(forKey: RefreshTimeSettingKey)
     var playerName = ""
-    var bubbleRadius = 50
+    var score = 0
+    var bubbleRadius = UserDefaults.standard.integer(forKey: BubbleSizeSettingKey)
     var maxBubble = UserDefaults.standard.integer(forKey: MaxBubbleSettingKey)
     var currentBubbles: [BubbleImageView] = []
     var lastColor: Bubble = .red

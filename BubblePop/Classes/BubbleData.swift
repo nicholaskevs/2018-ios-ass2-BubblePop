@@ -10,6 +10,8 @@ import UIKit
 
 let HighScoreTableKey = "highScoreTable"
 let GameTimeSettingKey = "gameTimeSetting"
+let RefreshTimeSettingKey = "refreshTimeSetting"
+let BubbleSizeSettingKey = "bubbleSizeSetting"
 let MaxBubbleSettingKey = "maxBubbleSetting"
 
 enum Bubble: Int {

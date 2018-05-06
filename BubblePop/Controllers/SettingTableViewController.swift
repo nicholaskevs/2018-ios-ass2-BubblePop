@@ -11,8 +11,12 @@ import UIKit
 class SettingTableViewController: UITableViewController {
     
     @IBOutlet weak var GameTimeLabel: UILabel!
+    @IBOutlet weak var RefreshTimeLabel: UILabel!
+    @IBOutlet weak var BubbleSizeLabel: UILabel!
     @IBOutlet weak var MaxBubbleLabel: UILabel!
     @IBOutlet weak var GameTimeSlider: UISlider!
+    @IBOutlet weak var RefreshTimeSlider: UISlider!
+    @IBOutlet weak var BubbleSizeSlider: UISlider!
     @IBOutlet weak var MaxBubbleSlider: UISlider!
     
     override func viewDidLoad() {
@@ -26,11 +30,19 @@ class SettingTableViewController: UITableViewController {
         
         // load settings value
         let gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
+        let refreshTime = UserDefaults.standard.integer(forKey: RefreshTimeSettingKey)
+        let bubbleSize = UserDefaults.standard.integer(forKey: BubbleSizeSettingKey)
         let maxBubble = UserDefaults.standard.integer(forKey: MaxBubbleSettingKey)
         
         GameTimeLabel.text = "\(gameTime)"
         GameTimeLabel.sizeToFit()
         GameTimeSlider.value = Float(gameTime)
+        RefreshTimeLabel.text = "\(refreshTime)"
+        RefreshTimeLabel.sizeToFit()
+        RefreshTimeSlider.value = Float(refreshTime)
+        BubbleSizeLabel.text = "\(bubbleSize)"
+        BubbleSizeLabel.sizeToFit()
+        BubbleSizeSlider.value = Float(bubbleSize)
         MaxBubbleLabel.text = "\(maxBubble)"
         MaxBubbleLabel.sizeToFit()
         MaxBubbleSlider.value = Float(maxBubble)
@@ -41,8 +53,10 @@ class SettingTableViewController: UITableViewController {
         
         // saving edited settings value
         if self.isMovingFromParentViewController {
-            UserDefaults.standard.set(Int(GameTimeLabel.text!), forKey: GameTimeSettingKey)
-            UserDefaults.standard.set(Int(MaxBubbleLabel.text!), forKey: MaxBubbleSettingKey)
+            UserDefaults.standard.set(Int(GameTimeSlider.value), forKey: GameTimeSettingKey)
+            UserDefaults.standard.set(Int(RefreshTimeSlider.value), forKey: RefreshTimeSettingKey)
+            UserDefaults.standard.set(Int(BubbleSizeSlider.value), forKey: BubbleSizeSettingKey)
+            UserDefaults.standard.set(Int(MaxBubbleSlider.value), forKey: MaxBubbleSettingKey)
         }
     }
     
@@ -50,6 +64,18 @@ class SettingTableViewController: UITableViewController {
         sender.value = Float(Int(sender.value))
         GameTimeLabel.text = "\(Int(sender.value))"
         GameTimeLabel.sizeToFit()
+    }
+    
+    @IBAction func refreshTimeChanged(_ sender: UISlider) {
+        sender.value = Float(Int(sender.value))
+        RefreshTimeLabel.text = "\(Int(sender.value))"
+        RefreshTimeLabel.sizeToFit()
+    }
+    
+    @IBAction func bubbleSizeChanged(_ sender: UISlider) {
+        sender.value = Float(Int(sender.value))
+        BubbleSizeLabel.text = "\(Int(sender.value))"
+        BubbleSizeLabel.sizeToFit()
     }
     
     @IBAction func maxBubbleChanged(_ sender: UISlider) {
@@ -70,7 +96,7 @@ class SettingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 8
     }
 
     /*
