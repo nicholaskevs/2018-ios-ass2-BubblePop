@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="ruk-e1-isv" kind="show" id="h00-Nt-YWl"/>
+                                    <segue destination="ruk-e1-isv" kind="show" identifier="GameViewSegue" id="h00-Nt-YWl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIc-FX-mUJ">

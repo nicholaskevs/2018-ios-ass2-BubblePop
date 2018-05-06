@@ -61,9 +61,24 @@ class HomeViewController: UIViewController {
             game.playerName = playerName.text!
         }
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // validate player name
+        if identifier == "GameViewSegue" {
+            if playerName.text!.isEmpty {
+                let alert = UIAlertController(title: "Empty name!", message: "Please enter your name", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                
+                return false
+            }
+        }
+        
+        return true
+    }
 
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
-        
+        playerName.text = ""
     }
 
 }
