@@ -9,6 +9,9 @@
 import UIKit
 
 class HighScoresTableViewController: UITableViewController {
+    
+    let highScore: [String : Int] = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as! [String : Int]
+    var sorted: [(key: String, value: Int)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,8 @@ class HighScoresTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        sorted = highScore.sorted{ $0.1 > $1.1 }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,18 +39,15 @@ class HighScoresTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return highScore.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HighscoreCell", for: indexPath)
+        cell.textLabel!.text = sorted[indexPath.row].key
+        cell.detailTextLabel!.text = "\(sorted[indexPath.row].value)"
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

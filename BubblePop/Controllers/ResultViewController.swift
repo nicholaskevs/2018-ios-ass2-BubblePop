@@ -31,10 +31,6 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         sorted = highScore.sorted{ $0.1 > $1.1 }
         
-//        for (key, val) in highScore {
-//            keys.append(key)
-//        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +47,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MiniHighScoreTable", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MiniHighscoreCell", for: indexPath)
         cell.textLabel!.text = sorted[indexPath.row].key
         cell.detailTextLabel!.text = "\(sorted[indexPath.row].value)"
         return cell
