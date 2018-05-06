@@ -37,12 +37,15 @@ class SettingTableViewController: UITableViewController {
         GameTimeLabel.text = "\(gameTime)"
         GameTimeLabel.sizeToFit()
         GameTimeSlider.value = Float(gameTime)
+        
         RefreshTimeLabel.text = "\(refreshTime)"
         RefreshTimeLabel.sizeToFit()
         RefreshTimeSlider.value = Float(refreshTime)
+        
         BubbleSizeLabel.text = "\(bubbleSize)"
         BubbleSizeLabel.sizeToFit()
         BubbleSizeSlider.value = Float(bubbleSize)
+        
         MaxBubbleLabel.text = "\(maxBubble)"
         MaxBubbleLabel.sizeToFit()
         MaxBubbleSlider.value = Float(maxBubble)
@@ -58,6 +61,11 @@ class SettingTableViewController: UITableViewController {
             UserDefaults.standard.set(Int(BubbleSizeSlider.value), forKey: BubbleSizeSettingKey)
             UserDefaults.standard.set(Int(MaxBubbleSlider.value), forKey: MaxBubbleSettingKey)
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func gameTimeChanged(_ sender: UISlider) {
@@ -84,10 +92,25 @@ class SettingTableViewController: UITableViewController {
         MaxBubbleLabel.sizeToFit()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func defaultSettings(_ sender: UIButton) {
+        GameTimeLabel.text = "60"
+        GameTimeLabel.sizeToFit()
+        GameTimeSlider.value = 60.0
+        
+        RefreshTimeLabel.text = "5"
+        RefreshTimeLabel.sizeToFit()
+        RefreshTimeSlider.value = 5.0
+        
+        BubbleSizeLabel.text = "50"
+        BubbleSizeLabel.sizeToFit()
+        BubbleSizeSlider.value = 50.0
+        
+        MaxBubbleLabel.text = "15"
+        MaxBubbleLabel.sizeToFit()
+        MaxBubbleSlider.value = 15.0
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -96,7 +119,7 @@ class SettingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
 
     /*
