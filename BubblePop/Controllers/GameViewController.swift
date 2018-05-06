@@ -16,7 +16,10 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     var gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
+    let realGameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
     var refreshTime = UserDefaults.standard.integer(forKey: RefreshTimeSettingKey)
+    let realRefreshTime = UserDefaults.standard.integer(forKey: RefreshTimeSettingKey)
+    var reduceRefresh = true
     var playerName = ""
     var score = 0
     var bubbleRadius = UserDefaults.standard.integer(forKey: BubbleSizeSettingKey)
@@ -85,6 +88,7 @@ class GameViewController: UIViewController {
             // remove and spawn bubbles every refreshTime second
             if gameTime > 0 && gameTime % refreshTime == 0 {
                 spawnBubbles()
+                reduceRefreshTime()
             }
         } else {
             gameOver()
@@ -211,6 +215,21 @@ class GameViewController: UIViewController {
             return 0
         } else {
             return highScore!.sorted{ $0.1 > $1.1 }.first!.value
+        }
+    }
+    
+    // reduce refresh time with relatively to game time
+    // the nearer game time to 0 will make it faster to remove and spawn bubble
+    // the minimum refresh time is 1
+    func reduceRefreshTime() {
+        if refreshTime > 1 && reduceRefresh {
+            let multiplier = Double(gameTime) / Double(realGameTime)
+            var newRefreshTime = Double(realRefreshTime) * multiplier
+            newRefreshTime.round()
+            refreshTime = Int(newRefreshTime)
+            reduceRefresh = false
+        } else {
+            reduceRefresh = true
         }
     }
     
