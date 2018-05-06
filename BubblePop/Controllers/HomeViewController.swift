@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     }
     
     func gameSetup() {
+        // set default value to UserDefaults
         if UserDefaults.standard.dictionary(forKey: HighScoreTableKey) == nil {
             let highScoreTable: [String : Int] = [:]
             UserDefaults.standard.set(highScoreTable, forKey: HighScoreTableKey)

@@ -20,6 +20,7 @@
 		E1C79ECD20822A4400C20C7A /* BubblePopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C79ECC20822A4400C20C7A /* BubblePopUITests.swift */; };
 		E1CC6F17209A00E200E70E3C /* BubbleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC6F16209A00E200E70E3C /* BubbleImageView.swift */; };
 		E1D11702209F20F000020E7A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D11701209F20F000020E7A /* SettingTableViewController.swift */; };
+		E1D11704209F2E0A00020E7A /* popBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D11703209F2E0A00020E7A /* popBubble.png */; };
 		E1D4C22B209896E300A0FF08 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */; };
 		E1D4C22D2098979500A0FF08 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4C22C2098979500A0FF08 /* GameViewController.swift */; };
 		E1D4C23F2098A59900A0FF08 /* blueBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D4C23D2098A59900A0FF08 /* blueBubble.png */; };
@@ -64,6 +65,7 @@
 		E1C79ECE20822A4400C20C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC6F16209A00E200E70E3C /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
 		E1D11701209F20F000020E7A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		E1D11703209F2E0A00020E7A /* popBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popBubble.png; sourceTree = "<group>"; };
 		E1D4C22A209896E300A0FF08 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		E1D4C22C2098979500A0FF08 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E1D4C23D2098A59900A0FF08 /* blueBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBubble.png; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				E121D49C209F0AE100649EA5 /* greenBubble.png */,
 				E1D4C23D2098A59900A0FF08 /* blueBubble.png */,
 				E121D49B209F0AE100649EA5 /* blackBubble.png */,
+				E1D11703209F2E0A00020E7A /* popBubble.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				E1C79EB220822A4300C20C7A /* Main.storyboard in Resources */,
 				E121D49E209F0AE200649EA5 /* blackBubble.png in Resources */,
 				E121D4A0209F0AE200649EA5 /* redBubble.png in Resources */,
+				E1D11704209F2E0A00020E7A /* popBubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

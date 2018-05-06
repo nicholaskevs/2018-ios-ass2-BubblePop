@@ -48,6 +48,7 @@ class GameViewController: UIViewController {
     func gameStart() {
         // get save area top edge
         safeAreaTop = Int(TimerLabel.frame.maxY)
+        
         HighestScoreLabel.text = "\(getHighestScore())"
         TimerLabel.text = "\(gameTime)"
         TimerLabel.sizeToFit()
@@ -159,8 +160,20 @@ class GameViewController: UIViewController {
             }
         }
         
-//        makeBubble(color, x: 128, y: 278)
         makeBubble(color, x: randomX, y: randomY)
+    }
+    
+    @objc func removeBubble(_ sender: Timer) {
+        let bubble = sender.userInfo as! BubbleImageView
+        bubble.removeFromSuperview()
+        
+        // refresh current bubble list
+        currentBubbles.removeAll()
+        for subview in view.subviews {
+            if let view = subview as? BubbleImageView {
+                currentBubbles.append(view)
+            }
+        }
     }
     
     func removeRandomBubble() {
@@ -186,7 +199,10 @@ class GameViewController: UIViewController {
         lastColor = bubble.color
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
-        bubble.removeFromSuperview()
+        bubble.image = UIImage(named: "popBubble.png")
+        
+        // remove the bubble
+        _ = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(removeBubble), userInfo: bubble, repeats: false)
     }
     
     func getHighestScore() -> Int {
