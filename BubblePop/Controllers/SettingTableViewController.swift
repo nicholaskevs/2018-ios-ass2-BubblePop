@@ -12,6 +12,8 @@ class SettingTableViewController: UITableViewController {
     
     @IBOutlet weak var GameTimeLabel: UILabel!
     @IBOutlet weak var MaxBubbleLabel: UILabel!
+    @IBOutlet weak var GameTimeSlider: UISlider!
+    @IBOutlet weak var MaxBubbleSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +23,30 @@ class SettingTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // load settings value
+        let gameTime = UserDefaults.standard.integer(forKey: GameTimeSettingKey)
+        let maxBubble = UserDefaults.standard.integer(forKey: MaxBubbleSettingKey)
+        
+        GameTimeLabel.text = "\(gameTime)"
+        GameTimeLabel.sizeToFit()
+        GameTimeSlider.value = Float(gameTime)
+        MaxBubbleLabel.text = "\(maxBubble)"
+        MaxBubbleLabel.sizeToFit()
+        MaxBubbleSlider.value = Float(maxBubble)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        // saving edited settings value
         if self.isMovingFromParentViewController {
             UserDefaults.standard.set(Int(GameTimeLabel.text!), forKey: GameTimeSettingKey)
             UserDefaults.standard.set(Int(MaxBubbleLabel.text!), forKey: MaxBubbleSettingKey)
         }
     }
     
-    @IBAction func timerChanged(_ sender: UISlider) {
+    @IBAction func gameTimeChanged(_ sender: UISlider) {
         sender.value = Float(Int(sender.value))
         GameTimeLabel.text = "\(Int(sender.value))"
         GameTimeLabel.sizeToFit()
@@ -52,12 +66,10 @@ class SettingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 4
     }
 

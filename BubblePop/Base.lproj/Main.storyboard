@@ -336,7 +336,7 @@
                                                     <rect key="frame" x="14" y="7" width="347" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <action selector="timerChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="BMg-Ja-ztT"/>
+                                                        <action selector="gameTimeChanged:" destination="R4r-pv-C3S" eventType="valueChanged" id="xsI-Vp-C4N"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
@@ -394,7 +394,9 @@
                     <navigationItem key="navigationItem" title="Settings" id="vGz-8F-zhu"/>
                     <connections>
                         <outlet property="GameTimeLabel" destination="LKL-53-ams" id="OFx-jZ-gnW"/>
+                        <outlet property="GameTimeSlider" destination="eWa-JW-v7T" id="cBo-L7-Xld"/>
                         <outlet property="MaxBubbleLabel" destination="7za-I0-iDX" id="7xb-u4-jrF"/>
+                        <outlet property="MaxBubbleSlider" destination="lgV-xX-o77" id="PlM-GL-gtO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiN-PK-Zdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
