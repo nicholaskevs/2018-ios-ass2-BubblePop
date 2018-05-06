@@ -16,8 +16,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var playerName = ""
     var score = 0
-    
     let highScore: [String : Int] = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as! [String : Int]
+    var sorted: [(key: String, value: Int)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,13 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         PlayerNameLabel.sizeToFit()
         ScoreLabel.text = "\(score)"
         ScoreLabel.sizeToFit()
+        
+        sorted = highScore.sorted{ $0.1 > $1.1 }
+        
+//        for (key, val) in highScore {
+//            keys.append(key)
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +42,19 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return highScore.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MiniHighScoreTable", for: indexPath)
+        cell.textLabel!.text = sorted[indexPath.row].key
+        cell.detailTextLabel!.text = "\(sorted[indexPath.row].value)"
+        return cell
     }
     
 
