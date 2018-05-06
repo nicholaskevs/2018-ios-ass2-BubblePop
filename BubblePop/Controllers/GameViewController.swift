@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     var playerName = ""
     var maxBubble = 15
     var currentBubble: [BubbleImageView] = []
+    var safeAreaTop = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,13 @@ class GameViewController: UIViewController {
     }
     
     func gameStart() {
+        // get save area top edge
+        safeAreaTop = Int(TimerLabel.frame.maxY)
+        
         // start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         
-//        spawnBubbles()
+        spawnBubbles()
     }
     
     func gameOver() {
@@ -47,9 +51,8 @@ class GameViewController: UIViewController {
     
     // countdown timer
     @objc func countdown() {
-        spawnBubbles()
-        
         if gameTime > 0 {
+            spawnBubbles()
             gameTime -= 1
             TimerLabel.text = "\(gameTime)"
             TimerLabel.sizeToFit()
@@ -117,11 +120,11 @@ class GameViewController: UIViewController {
             color = .pink
         }
         
+        // get random position to spawn
         let x = Int(view.bounds.width) - 50
-        let y = Int(view.bounds.height) - 50
-        
+        let y = Int(view.bounds.height) - safeAreaTop - 50
         let randomX = Int(arc4random_uniform(UInt32(x)))
-        let randomY = Int(arc4random_uniform(UInt32(y)))
+        let randomY = Int(arc4random_uniform(UInt32(y))) + safeAreaTop
         
 //        makeBubble(color, x: 128, y: 278)
         makeBubble(color, x: randomX, y: randomY)
