@@ -31,6 +31,14 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         gameStart()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParentViewController {
+            timer.invalidate()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
