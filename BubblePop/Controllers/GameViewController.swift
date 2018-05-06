@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     var playerName = ""
     var bubbleRadius = 50
     var maxBubble = 15
-    var currentBubble: [BubbleImageView] = []
+    var currentBubbles: [BubbleImageView] = []
     var safeAreaTop = 0
 
     override func viewDidLoad() {
@@ -69,19 +69,19 @@ class GameViewController: UIViewController {
     
     // refresh and get current showing bubbles into array
     func getBubbles() {
-        currentBubble.removeAll()
+        currentBubbles.removeAll()
         for subview in view.subviews {
             if let bubble = subview as? BubbleImageView {
-                currentBubble.append(bubble)
+                currentBubbles.append(bubble)
             }
         }
     }
     
     // remove random bubbles and spawn new bubbles
     func spawnBubbles() {
-        if currentBubble.count > 0 {
+        if currentBubbles.count > 0 {
             // get random number of bubble that will be removed
-            let randomRemove = Int(arc4random_uniform(UInt32(currentBubble.count + 1)))
+            let randomRemove = Int(arc4random_uniform(UInt32(currentBubbles.count + 1)))
             
             for _ in 0..<randomRemove {
                 removeRandomBubble()
@@ -89,7 +89,7 @@ class GameViewController: UIViewController {
         }
         
         // get random number of bubble that can be spawned
-        let canSpawn = maxBubble - currentBubble.count
+        let canSpawn = maxBubble - currentBubbles.count
         let randomSpawn = Int(arc4random_uniform(UInt32(canSpawn + 1)))
         
         for _ in 0..<randomSpawn {
@@ -106,12 +106,15 @@ class GameViewController: UIViewController {
         newBubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
         
         view.addSubview(newBubble)
-        currentBubble.append(newBubble)
+        currentBubbles.append(newBubble)
     }
     
     func makeRandomBubble() {
         let randomColor = Int(arc4random_uniform(101))
         var color: Bubble
+        var intersect = true
+        var randomX = 0
+        var randomY = 0
         
         // random bubble colour with probability
         if randomColor <= 40 {
@@ -127,20 +130,31 @@ class GameViewController: UIViewController {
         }
         
         // get random position to spawn
-        let x = Int(view.bounds.width) - bubbleRadius
-        let y = Int(view.bounds.height) - safeAreaTop - bubbleRadius
-        let randomX = Int(arc4random_uniform(UInt32(x)))
-        let randomY = Int(arc4random_uniform(UInt32(y))) + safeAreaTop
+        while intersect {
+            let x = Int(view.bounds.width) - bubbleRadius
+            let y = Int(view.bounds.height) - safeAreaTop - bubbleRadius
+            randomX = Int(arc4random_uniform(UInt32(x)))
+            randomY = Int(arc4random_uniform(UInt32(y))) + safeAreaTop
+            let frame = CGRect(x: randomX, y: randomY, width: bubbleRadius, height: bubbleRadius)
+            intersect = false
+            
+            // check if it intersect with other bubbles
+            for bubble in currentBubbles {
+                if bubble.frame.intersects(frame) {
+                    intersect = true
+                }
+            }
+        }
         
 //        makeBubble(color, x: 128, y: 278)
         makeBubble(color, x: randomX, y: randomY)
     }
     
     func removeRandomBubble() {
-        let randomIndex = Int(arc4random_uniform(UInt32(currentBubble.count)))
+        let randomIndex = Int(arc4random_uniform(UInt32(currentBubbles.count)))
         
-        currentBubble[randomIndex].removeFromSuperview()
-        currentBubble.remove(at: randomIndex)
+        currentBubbles[randomIndex].removeFromSuperview()
+        currentBubbles.remove(at: randomIndex)
     }
     
     // tap bubble trigger
