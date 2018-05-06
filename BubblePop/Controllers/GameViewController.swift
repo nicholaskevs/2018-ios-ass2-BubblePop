@@ -16,9 +16,11 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     var gameTime = 60
+    var refreshTime = 5
     var score = 0
     var highestScore = 0
     var playerName = ""
+    var bubbleRadius = 50
     var maxBubble = 15
     var currentBubble: [BubbleImageView] = []
     var safeAreaTop = 0
@@ -52,10 +54,14 @@ class GameViewController: UIViewController {
     // countdown timer
     @objc func countdown() {
         if gameTime > 0 {
-            spawnBubbles()
             gameTime -= 1
             TimerLabel.text = "\(gameTime)"
             TimerLabel.sizeToFit()
+            
+            // remove and spawn bubbles every refreshTime second
+            if gameTime > 0 && gameTime % refreshTime == 0 {
+                spawnBubbles()
+            }
         } else {
             gameOver()
         }
@@ -95,7 +101,7 @@ class GameViewController: UIViewController {
     func makeBubble(_ color: Bubble, x: Int, y: Int) {
         let newBubble = BubbleImageView(image: UIImage(named: color.image))
         newBubble.color = color
-        newBubble.frame = CGRect(x: x, y: y, width: 50, height: 50)
+        newBubble.frame = CGRect(x: x, y: y, width: bubbleRadius, height: bubbleRadius)
         newBubble.isUserInteractionEnabled = true
         newBubble.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBubble)))
         
@@ -121,8 +127,8 @@ class GameViewController: UIViewController {
         }
         
         // get random position to spawn
-        let x = Int(view.bounds.width) - 50
-        let y = Int(view.bounds.height) - safeAreaTop - 50
+        let x = Int(view.bounds.width) - bubbleRadius
+        let y = Int(view.bounds.height) - safeAreaTop - bubbleRadius
         let randomX = Int(arc4random_uniform(UInt32(x)))
         let randomY = Int(arc4random_uniform(UInt32(y))) + safeAreaTop
         
