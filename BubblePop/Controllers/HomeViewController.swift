@@ -67,7 +67,7 @@ class HomeViewController: UIViewController {
         if identifier == "GameViewSegue" {
             if playerName.text!.isEmpty {
                 let alert = UIAlertController(title: "Empty name!", message: "Please enter your name", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in self.playerName.becomeFirstResponder()}))
                 self.present(alert, animated: true)
                 
                 return false
