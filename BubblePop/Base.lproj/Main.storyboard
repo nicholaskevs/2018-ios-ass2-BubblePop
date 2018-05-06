@@ -142,11 +142,35 @@
                         <outlet property="HighestScoreLabel" destination="7m7-5P-3RY" id="wJt-sd-tpX"/>
                         <outlet property="ScoreLabel" destination="BnJ-aL-ad5" id="6xy-vG-jnd"/>
                         <outlet property="TimerLabel" destination="LNm-De-yHe" id="sAq-es-JBg"/>
+                        <segue destination="ndr-Dj-pKR" kind="show" identifier="ResultSegue" id="25p-mx-k1E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knj-zW-u0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="277.60000000000002" y="286.50674662668666"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="xQP-DZ-Scu">
+            <objects>
+                <viewController id="ndr-Dj-pKR" customClass="ResultViewController" customModule="BubblePop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fb3-Ze-Rcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="UW2-Tj-DF4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Result" id="a2W-dv-NEf">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="XxQ-bo-FdD">
+                            <connections>
+                                <segue destination="P75-Do-Y0m" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="Z5R-3z-wqC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CLH-hc-7Kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="P75-Do-Y0m" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="287"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="szL-c3-SjY">

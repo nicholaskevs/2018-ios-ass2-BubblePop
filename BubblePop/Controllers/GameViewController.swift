@@ -53,6 +53,8 @@ class GameViewController: UIViewController {
         var table = UserDefaults.standard.dictionary(forKey: HighScoreTableKey) as! [String : Int]
         table[playerName] = score
         UserDefaults.standard.set(table, forKey: HighScoreTableKey)
+        
+        performSegue(withIdentifier: "ResultSegue", sender: nil)
     }
     
     // countdown timer
